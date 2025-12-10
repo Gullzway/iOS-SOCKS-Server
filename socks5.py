@@ -5,7 +5,6 @@
 import ipaddress
 import logging
 import socket
-import ui
 import threading
 
 from lib.socks5_server import AsyncSocks5Handler
@@ -318,15 +317,7 @@ if __name__ == "__main__":
         asyncio.create_task(server.run())
 
         await stats.render_forever()
-       
-    # Handler for full screen button to render a full screen window.
-    # Use a two-finger "slide down" gesture to close.
-    def full_screen_handler(sender):
-        fs_view = ui.View()
-        fs_view.name = "Full screen"
-        fs_view.background_color = 'black'
-        fs_view.present(style='popover', hide_title_bar=True)
-    
+          
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
