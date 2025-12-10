@@ -105,6 +105,8 @@ try:
             iftypes["en"].append(iface)
         elif iface.name.startswith("bridge"):
             iftypes["bridge"].append(iface)
+        elif iface.name == 'pdp_ip0':
+            iftypes["cell"].append(iface)     
         elif iface.name.startswith("utun"):
             iftypes["vpn"].append(iface)
         else:
