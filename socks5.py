@@ -318,6 +318,19 @@ if __name__ == "__main__":
 
         await stats.render_forever()
 
+    # Create side panel UI component to enter full screen
+    view = ui.View()
+    view.name = "SOCKS"
+    view.background_color = "black"
+    view.flex = "WH"
+    # Add simple button to show full screen popover
+    fs_button = ui.Button(title="Enter full screen")
+    fs_button.action = full_screen_handler
+
+    # Render main UI and full screen button
+    view.add_subview(fs_button)
+    view.present(style="panel", hide_title_bar=True)
+    
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
