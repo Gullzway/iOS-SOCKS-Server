@@ -317,12 +317,7 @@ if __name__ == "__main__":
         asyncio.create_task(server.run())
 
         await stats.render_forever()
-
-    fs_view = ui.View()
-    fs_view.name = "Full screen"
-    fs_view.background_color = 'black'
-    fs_view.present(style='popover', hide_title_bar=True)
-    
+       
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
